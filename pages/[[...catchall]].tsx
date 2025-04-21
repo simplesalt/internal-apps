@@ -1,5 +1,5 @@
 import { PlasmicComponent } from "@plasmicapp/loader-nextjs";
-import { PLASMIC } from "../plasmic-init";
+import { PLASMIC } from "@/plasmic-init";
 
 export default function CatchallPage() {
   return <PlasmicComponent component="YourRootComponent" />;
@@ -8,7 +8,7 @@ export default function CatchallPage() {
 export const getStaticPaths = async () => {
   return {
     paths: [{ params: { catchall: [] } }],
-    fallback: false, // Disable dynamic paths
+    fallback: false,
   };
 };
 
