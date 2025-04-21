@@ -14,5 +14,20 @@ export const getStaticPaths = async () => {
 
 // Critical: Disable ISR/SSG for Cloudflare Pages + static export
 export const getStaticProps = async () => {
-  return { props: {} }; // Plain static props
+  const plasmicData = await PLASMIC.fetchComponentData("YourRootComponent");
+  return {
+    props: {
+      plasmicData,
+    },
+  };
 };
+export default function CatchallPage({ plasmicData }) {
+  return (
+    <PlasmicComponent
+      component="YourRootComponent"
+      componentProps={{
+        plasmicData,
+      }}
+    />
+  );
+}
