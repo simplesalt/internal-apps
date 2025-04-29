@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 
 export default function PlasmicLoaderPage(props: {
   plasmicData?: ComponentRenderData;
-  queryCache?: Record<string, any>;
+  queryCache?: Record<string, unknown>;
 }) {
   const { plasmicData, queryCache } = props;
   const router = useRouter();
